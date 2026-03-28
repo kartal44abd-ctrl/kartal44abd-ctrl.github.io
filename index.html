@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzay Hukuku ve Yönetişim Portalı</title>
+    <style>
+        :root {
+            --accent-blue: #00a8ff;
+            --text-white: #ffffff;
+            --card-bg: rgba(10, 20, 40, 0.9);
+            --border-blue: rgba(0, 168, 255, 0.4);
+            --portal-title-bg: rgba(0, 0, 0, 0.9);
+        }
+
+        body {
+            background: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #dcdde1;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--accent-blue); }
+
+        .container {
+            max-width: 1100px;
+            margin: 100px auto 40px;
+            padding: 20px;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 50px;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-blue);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .portal-header {
+            background: var(--portal-title-bg);
+            border-bottom: 2px solid var(--accent-blue);
+            text-align: center;
+            padding: 30px;
+            margin-top: -80px;
+            margin-bottom: 50px;
+        }
+
+        .portal-header h1 {
+            border: none;
+            margin: 0;
+            padding: 0;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+        }
+
+        #giris {
+            background-image: linear-gradient(var(--card-bg), var(--card-bg)), 
+                              url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1950&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1, h2, h3 { 
+            color: var(--accent-blue); 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 { border-bottom: 2px solid var(--accent-blue); padding-bottom: 15px; margin-bottom: 30px; }
+
+        h4 {
+            color: var(--accent-blue);
+            letter-spacing: 1px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        .policy-item {
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 20px;
+            margin: 30px 0;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .policy-tag {
+            background: var(--accent-blue);
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .kaynak-link {
+            color: #4db8ff;
+            text-decoration: none;
+            word-break: break-all;
+            font-size: 0.85rem;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .kaynak-link:hover { text-decoration: underline; color: #fff; }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(0,0,0,0.9);
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        strong { color: var(--accent-blue); }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .ozet-box {
+            background: rgba(0, 168, 255, 0.05);
+            border: 1px solid var(--border-blue);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .yontem-box {
+            background: rgba(0, 168, 255, 0.04);
+            border-left: 4px solid var(--accent-blue);
+            padding: 20px 25px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#baslik">Başlık</a>
+        <a href="#ozet">Özet</a>
+        <a href="#giris">Giriş</a>
+        <a href="#amac">Araştırma Amacı</a>
+        <a href="#yontem">Yöntem</a>
+        <a href="#politikalar">Politika Önerileri</a>
+        <a href="#sonuc">Sonuç</a>
+        <a href="#kaynakca">Kaynakça</a>
+    </nav>
+
+    <div class="container">
+        
+        <section class="portal-header" id="baslik">
+            <h1>YENİ UZAY ÇAĞINDA UZAY HUKUKU: YAPISAL SORUNLAR VE SÜRDÜRÜLEBİLİR YÖNETİM MODELLERİ</h1>
+        </section>
+
+        <!-- ÖZET -->
+        <section id="ozet">
+            <h1>ÖZET</h1>
+            <div class="ozet-box">
+                <p>Bu çalışma, uzay hukukunun mevcut yapısını çok boyutlu bir perspektiften inceleyerek yeni uzay çağında ortaya çıkan yapısal sorunları analiz etmeyi ve bu sorunlara yönelik uygulanabilir politika önerileri geliştirmeyi amaçlamaktadır. <strong>Outer Space Treaty</strong> ile şekillenen klasik uzay hukuku çerçevesi, uzayın barışçıl kullanımı ve tüm insanlığın ortak mirası olması ilkelerini temel almakla birlikte; günümüzde özel sektörün artan rolü, uzay çöpleri, yörünge yoğunluğu ve uzay kaynaklarının kullanımı gibi gelişmeler karşısında yetersiz kalmaktadır.</p>
+                <p>Araştırma, literatür taramasına dayalı nitel bir yöntemle yürütülmüş; uzay hukukunun temel problem alanları <strong>hukuki yetersizlik</strong>, <strong>yönetişim eksikliği</strong> ve <strong>sürdürülebilirlik krizi</strong> başlıkları altında analiz edilmiştir. Bu doğrultuda çalışma, uzay faaliyetlerinde artan çok aktörlü yapının mevcut düzenlemelerde parçalanmaya yol açtığını, uzay çöplerinin sistemik risk oluşturduğunu ve uzay kaynaklarının kullanımına ilişkin hukuki belirsizliklerin gelecekte çatışma potansiyeli taşıdığını ortaya koymaktadır.</p>
+                <p>Bu sorunlara çözüm olarak çalışmada; <strong>Uluslararası Uzay Otoritesi</strong> kurulması, uzay çöpü yönetim sistemlerinin geliştirilmesi, küresel uzay trafik yönetimi mekanizması oluşturulması, uzay kaynakları için hibrit paylaşım modeli ve <strong>Uluslararası Uzay Temettü Fonu</strong> önerilmesi, uzay çevre hukukunun geliştirilmesi ve "kirleten öder" prensibinin uygulanması gibi bütüncül politika önerileri sunulmaktadır.</p>
+                <p>Ayrıca çalışma, teorik bulguların uygulamaya aktarılması amacıyla öğrenciler tarafından geliştirilen <strong>web tabanlı dijital platform</strong> ile desteklenmiştir. Bu platform, uzay hukukunun temel kavramlarını ve önerilen politika modellerini erişilebilir ve öğretilebilir bir yapıya dönüştürerek, çalışmanın eğitim boyutuna katkı sağlamaktadır.</p>
+                <p>Sonuç olarak bu çalışma, uzay hukukunun yalnızca mevcut sorunları tanımlayan bir alan olmaktan çıkıp, çözüm üreten ve sürdürülebilir yönetişim modelleri geliştiren bir disipline dönüşmesi gerektiğini ortaya koymaktadır. Uzayın giderek daha fazla kullanılan ve sınırlı bir kaynak haline gelmesi, daha kapsayıcı, bağlayıcı ve sürdürülebilir bir uluslararası hukuk sisteminin geliştirilmesini zorunlu kılmaktadır.</p>
+            </div>
+        </section>
+
+        <!-- GİRİŞ -->
+        <section id="giris">
+            <h1>1. GİRİŞ</h1>
+            <p>Uzay hukuku literatürü, büyük ölçüde <strong>Outer Space Treaty</strong> ile belirlenen temel ilkeler etrafında şekillenmiştir. Bu antlaşma, uzayın tüm insanlığın ortak mirası olduğunu ve hiçbir devletin egemenlik iddiasında bulunamayacağını ortaya koyarak uluslararası uzay hukukunun normatif temelini oluşturmuştur. Bu yönüyle antlaşma, yalnızca hukuki bir metin olmanın ötesinde, uzayın kullanımına ilişkin etik ve politik bir çerçeve de sunmaktadır.</p>
+            <p>Bununla birlikte, günümüzde uzay faaliyetlerinin çeşitlenmesi ve özellikle özel sektörün artan rolü, bu klasik çerçevenin yeterliliğini tartışmalı hale getirmiştir. Geleneksel olarak devlet merkezli yapı üzerine kurulu olan uzay hukuku, artık çok aktörlü, rekabetçi ve ticari bir ortamda işlev görmek zorundadır. Bu durum, mevcut hukuki düzenlemelerin kapsamı ve uygulanabilirliği konusunda ciddi soru işaretleri doğurmaktadır.</p>
+            <p><strong>Jakhu ve Freeland (2017)</strong>, uzay hukukunun yalnızca yazılı kurallardan ibaret olmadığını, aynı zamanda devlet pratiği ve teamül hukuku ile şekillendiğini vurgulamaktadır. Bu yaklaşım, hukukun dinamik ve evrimsel doğasına işaret etmekte, aynı zamanda farklı aktörlerin uygulamaları üzerinden yeni normların ortaya çıkabileceğini göstermektedir. Ancak bu esneklik, özellikle yeni faaliyet alanlarında yorum farklılıklarına ve uygulama belirsizliklerine yol açmaktadır (Jakhu & Freeland, 2017). Bu durum, uluslararası hukukta öngörülebilirlik ve tutarlılık ilkelerini zayıflatma riski taşımaktadır.</p>
+            <p>Literatürde öne çıkan bir diğer dönüşüm, uzay faaliyetlerinin devlet merkezli yapıdan çok aktörlü bir sisteme evrilmesidir. <strong>von der Dunk (2011)</strong>, uzay turizmi ve özel uzay uçuşlarının artışıyla birlikte ulusal düzenlemelerin hızla geliştiğini, ancak küresel ölçekte bağlayıcı ve bütüncül bir denetim mekanizmasının bulunmadığını belirtmektedir (von der Dunk, 2011). Bu durum, farklı devletlerin farklı düzenleyici yaklaşımlar benimsemesine yol açmakta ve uzay faaliyetlerinde parçalı bir hukuki yapı ortaya çıkarmaktadır. Sonuç olarak, aynı tür faaliyetler farklı ülkelerde farklı hukuki rejimlere tabi olabilmektedir.</p>
+            <p>Uzay ortamına ilişkin teknik riskler de hukuki tartışmaların merkezinde yer almaktadır. <strong>Kessler ve Cour-Palais (1978)</strong>, yörüngedeki nesne yoğunluğunun kritik bir eşiği aşması durumunda, çarpışmaların kendini besleyen bir enkaz üretim sürecine dönüşeceğini ortaya koymuştur. Bu yaklaşım, günümüzde <strong>"Kessler Sendromu"</strong> olarak kavramsallaştırılmıştır. Bu sendrom, uzay faaliyetlerinin sürdürülebilirliği açısından en büyük tehditlerden biri olarak kabul edilmektedir.</p>
+            <p><strong>Boley ve Byers (2021)</strong> ise düşük Dünya yörüngesinde hızla artan uydu sayısının yalnızca çarpışma riskini değil, aynı zamanda çevresel etkileri de artırdığını ortaya koyarak bu riskin güncel ve acil bir tehdit haline geldiğini göstermektedir (Boley & Byers, 2021). Özellikle mega uydu takımyıldızları, hem yörünge yoğunluğunu artırmakta hem de astronomik gözlemler ve atmosfer üzerinde olumsuz etkiler yaratmaktadır.</p>
+            <p>Uzay kaynaklarının kullanımı ise literatürde en yoğun tartışılan alanlardan biridir. De Zwart ve arkadaşları (2023), bu alana ilişkin açık ve bağlayıcı uluslararası düzenlemelerin bulunmamasının, devletler ve özel aktörler arasında gelecekte ciddi çatışmalara yol açabileceğini belirtmektedir (de Zwart et al., 2023). Bu durum, <strong>"müşterek miras" ilkesi</strong> ile <strong>"özel mülkiyet" yaklaşımı</strong> arasındaki normatif gerilimi ortaya koymaktadır. Bu gerilim, uzay hukukunun gelecekteki yönünü belirleyecek temel tartışma alanlarından biridir.</p>
+            <p>Bunun yanı sıra, uzay yönetişimi literatürü uzay trafiği yönetimini kritik bir sorun alanı olarak tanımlamaktadır. <strong>Muelhaupt ve arkadaşları (2019)</strong>, artan uydu yoğunluğu karşısında mevcut sistemlerin yetersiz kaldığını ve koordineli bir trafik yönetim mekanizmasının gerekliliğini vurgulamaktadır (Muelhaupt et al., 2019). Bu bağlamda, uzay trafiğinin düzenlenmesi yalnızca teknik değil, aynı zamanda hukuki ve politik bir mesele olarak ortaya çıkmaktadır.</p>
+            <p>Son olarak, uzayın çevresel boyutu literatürde giderek daha fazla önem kazanmaktadır. <strong>Lawrence ve arkadaşları (2022)</strong>, uzayın korunması gereken bir çevresel sistem olarak ele alınması gerektiğini savunmaktadır (Lawrence et al., 2022). Bu yaklaşım, uzay hukukunun klasik güvenlik ve egemenlik temelli paradigmasından, sürdürülebilirlik ve çevre temelli bir paradigmaya doğru evrildiğini göstermektedir.</p>
+            <p>Tüm bu çalışmalar birlikte değerlendirildiğinde, uzay hukukunun üç temel yapısal sorunla karşı karşıya olduğu görülmektedir: (i) mevcut hukuki çerçevenin yeni uzay faaliyetlerini kapsamada yetersiz kalması, (ii) küresel düzeyde etkili bir yönetişim ve denetim mekanizmasının bulunmaması ve (iii) uzay ortamının sürdürülebilirliğini tehdit eden çevresel risklerin artması.</p>
+            <p>Bu bağlamda literatür, uzay hukukunun güncellenmesi ve daha kapsayıcı, bağlayıcı ve sürdürülebilir bir yönetişim modelinin geliştirilmesi gerektiği konusunda güçlü bir ortak görüş sunmaktadır.</p>
+        </section>
+
+        <!-- ARAŞTIRMANIN AMACI -->
+        <section id="amac">
+            <h2>2. ARAŞTIRMANIN AMACI</h2>
+            <p>Bu çalışmanın temel amacı, uzay hukukunun mevcut yapısını çok boyutlu bir perspektiften inceleyerek, yeni uzay çağında ortaya çıkan yapısal sorunları belirlemek ve bu sorunlara yönelik uygulanabilir, sürdürülebilir ve adil politika önerileri geliştirmektir.</p>
+            <p>Bu doğrultuda çalışma, özellikle <strong>Outer Space Treaty</strong> ile şekillenen mevcut hukuki çerçevenin; özel sektörün artan rolü, uzay çöpleri, uzay trafiği ve uzay kaynaklarının kullanımı gibi güncel gelişmeler karşısındaki yeterliliğini değerlendirmeyi hedeflemektedir. Bu değerlendirme, yalnızca normatif bir analizle sınırlı kalmayıp, aynı zamanda uygulamadaki boşlukları ve çelişkileri de ortaya koymayı amaçlamaktadır.</p>
+            <p>Araştırma, uzay hukukunun yalnızca normatif bir çerçeve olarak değil, aynı zamanda teknik, ekonomik ve çevresel boyutları olan dinamik bir yönetişim alanı olarak ele alınmasını amaçlamaktadır. Bu kapsamda, literatürde yer alan güncel akademik çalışmalar sistematik biçimde analiz edilerek uzay hukukunun karşı karşıya olduğu temel sorun alanları belirlenmekte ve bu sorunların birbirleriyle olan ilişkisi ortaya konulmaktadır.</p>
+            <p>Çalışmanın bir diğer amacı, uzay faaliyetlerinin hızla artmasıyla birlikte ortaya çıkan hukuki boşluk, yönetişim eksikliği ve sürdürülebilirlik krizi gibi temel problemlere yönelik bütüncül bir çözüm modeli geliştirmektir. Bu bağlamda araştırma, mevcut literatürde sıklıkla vurgulanan sorunları yalnızca tanımlamakla kalmayıp, bu sorunlara yönelik somut ve uygulanabilir politika araçları üretmeyi hedeflemektedir.</p>
+            <p>Bu doğrultuda çalışma kapsamında özellikle aşağıdaki hedeflere ulaşılması amaçlanmaktadır:</p>
+            <ul>
+                <li>Mevcut uzay hukukunun kapsam ve sınırlarını analiz etmek</li>
+                <li>Uzay faaliyetlerinde ortaya çıkan yeni risk alanlarını belirlemek</li>
+                <li>Uzay çöpleri, uzay trafiği ve kaynak kullanımı gibi kritik konuları değerlendirmek</li>
+                <li>Özel sektörün uzay faaliyetlerindeki rolünü hukuki açıdan incelemek</li>
+                <li>Uzayın "küresel ortak alan" niteliğini koruyacak politika önerileri geliştirmek</li>
+                <li>Elde edilen kuramsal bulguları, öğrenciler tarafından geliştirilen web tabanlı dijital platform aracılığıyla erişilebilir ve öğretilebilir bir yapıya dönüştürmek</li>
+            </ul>
+            <p>Ayrıca bu çalışma, uzay kaynaklarının kullanımına yönelik olarak <strong>"müşterek fayda"</strong> ilkesi ile <strong>"özel mülkiyet ve ticari kullanım"</strong> yaklaşımları arasında denge kuran hibrit bir model önermeyi ve bu model aracılığıyla küresel ölçekte daha adil bir paylaşım mekanizması oluşturmayı hedeflemektedir.</p>
+            <p>Bununla birlikte çalışma, yalnızca teorik bir analiz sunmakla sınırlı kalmayıp, elde edilen bilgilerin dijital ortamda yaygınlaştırılmasını amaçlayan bir uygulama boyutunu da içermektedir. Bu kapsamda geliştirilen web tabanlı platform, uzay hukukuna ilişkin temel kavramları ve politika önerilerini daha geniş kitlelere ulaştırmayı ve uzay okuryazarlığını artırmayı hedeflemektedir.</p>
+            <p>Sonuç olarak bu araştırma, uzay hukukunun günümüz koşullarına uyarlanması gerektiği varsayımından hareketle, disiplinler arası bir yaklaşımla hem teorik hem de pratik katkı sunmayı amaçlamaktadır. Bu yönüyle çalışma, uzay hukukunun geleceğine ilişkin politika geliştirme süreçlerine katkı sağlamayı, sürdürülebilir uzay yönetimi için bir yol haritası ortaya koymayı ve aynı zamanda dijital öğrenme ortamları aracılığıyla bilginin yaygınlaştırılmasına katkıda bulunmayı hedeflemektedir.</p>
+        </section>
+
+        <!-- YÖNTEM -->
+        <section id="yontem">
+            <h2>3. YÖNTEM</h2>
+            <p>Bu çalışma, uzay hukukunun güncel sorun alanlarını ve çözüm önerilerini incelemek amacıyla <strong>nitel araştırma yöntemi</strong> kapsamında tasarlanmıştır. Araştırmada <strong>doküman analizi</strong> ve <strong>literatür taraması</strong> yöntemleri kullanılmış; uluslararası akademik makaleler, kitaplar ve raporlar sistematik biçimde incelenmiştir. Bu süreçte, Outer Space Treaty ile şekillenen klasik uzay hukuku çerçevesi ile yeni uzay çağında ortaya çıkan gelişmeler birlikte değerlendirilmiştir.</p>
+            <div class="yontem-box">
+                <p>Literatür incelemesi; uzay hukukunun temel ilkeleri, özel sektörün artan rolü, uzay çöpleri, uzay trafiği, uzay kaynaklarının kullanımı ve çevresel sürdürülebilirlik başlıkları altında tematik olarak analiz edilmiştir. Elde edilen veriler, karşılaştırmalı ve eleştirel bir yaklaşımla değerlendirilmiş; uzay hukukunun karşı karşıya olduğu temel sorun alanları belirlenmiştir.</p>
+            </div>
+            <p>Çalışmanın yöntembilimsel yaklaşımı, <strong>normatif-hukuki analiz</strong> ile <strong>politika analizi</strong>ni bir araya getirmektedir. Bu sayede yalnızca mevcut hukuki düzenlemeler incelenmemiş, aynı zamanda bu düzenlemelerin uygulamadaki yetersizlikleri de ortaya konulmuştur. Elde edilen bulgular doğrultusunda, sorunlara yönelik somut ve uygulanabilir politika önerileri geliştirilmiştir.</p>
+            <p>Ayrıca araştırma kapsamında, kuramsal bulguların uygulamaya aktarılması amacıyla öğrenciler tarafından bir <strong>web tabanlı dijital platform</strong> geliştirilmiştir. Bu platform, uzay hukukuna ilişkin temel kavramları ve çalışmada geliştirilen politika önerilerini sade, anlaşılır ve erişilebilir bir şekilde sunmayı hedeflemektedir. Böylece çalışma, yalnızca teorik bir analiz sunmakla kalmayıp aynı zamanda <strong>uygulamalı ve eğitim odaklı bir model</strong> ortaya koymaktadır.</p>
+            <p>Sonuç olarak bu yöntem, uzay hukukunun hem kavramsal olarak analiz edilmesini hem de elde edilen bilgilerin dijital ortamda yaygınlaştırılmasını sağlayan bütüncül bir araştırma yaklaşımı sunmaktadır.</p>
+        </section>
+
+        <!-- POLİTİKA ÖNERİLERİ -->
+        <section id="politikalar">
+            <h2>4. POLİTİKA ÖNERİLERİ</h2>
+            <p>Bu çalışmada geliştirilen politika önerileri, literatürde belirlenen temel problem alanları ile doğrudan ilişkilendirilerek oluşturulmuştur. Her öneri, ilgili akademik çalışmalarla desteklenmekte ve belirli bir yapısal soruna çözüm sunmaktadır.</p>
+
+            <!-- Problem 1 -->
+            <div class="policy-item">
+                <span class="policy-tag">Problem 1: Hukuki Yetersizlik ve Parçalı Düzenleme Yapısı</span>
+                <h3>4.1. Hukuki Yetersizlik ve Parçalı Düzenleme Yapısı</h3>
+                <p>Mevcut uzay hukuku, <em>Outer Space Treaty</em> temelinde şekillenmiş olup devlet merkezli bir yapı üzerine kuruludur. Ancak günümüzde uzay faaliyetlerinin önemli bir kısmı özel sektör tarafından yürütülmektedir. Bu dönüşüm, mevcut hukuki çerçevenin yetersiz kalmasına neden olmaktadır. Jakhu ve Freeland (2017), uzay hukukunun teamül ve devlet pratiği ile şekillendiğini, ancak bu yapının yeni faaliyet alanlarında yorum farklılıklarına yol açtığını belirtmektedir. Benzer şekilde von der Dunk (2011), özel uzay faaliyetlerinin artışıyla birlikte ulusal düzenlemelerin parçalı hale geldiğini vurgulamaktadır.</p>
+
+                <h4>4.1.1. Politika Önerisi: Uluslararası Uzay Otoritesi</h4>
+                <p>Bu bağlamda önerilen temel çözüm, bağlayıcı yetkilere sahip bir <strong>Uluslararası Uzay Otoritesi</strong> kurulmasıdır. Bu otorite aracılığıyla tüm uzay faaliyetlerinin lisanslanması ve denetlenmesi sağlanmalı, ortak standartlar belirlenmeli ve mevcut dağınık yapı yerine merkezi bir yönetişim modeli oluşturulmalıdır. Jakhu ve Freeland (2017) ile von der Dunk'ın (2011) işaret ettiği parçalı yapıyı gidermek için bu otorite, devletlerüstü bir meşruiyete sahip olmalıdır.</p>
+
+                <h4>4.1.2. Kuruluş Modeli ve Hukuki Temel</h4>
+                <p>Uluslararası Uzay Otoritesi'nin, mevcut BM Uzay İşleri Ofisi'nden (UNOOSA) farklı olarak teknik sekreterya niteliğinin ötesine geçen, ICAO veya IAEA benzeri bağlayıcı bir yapıda kurulması gerekmektedir. Bunun için 1967 Dış Uzay Antlaşması'na ek olarak, imzacı devletlerin belirli yörünge ve fırlatma yetkilerini devrettiği yeni bir <strong>Uzay Yönetişim Protokolü</strong> hazırlanmalıdır. Ayrıca bu otoritenin kararlarının ulusal hukuk sistemlerinde doğrudan uygulanabilir olması, sistemin etkinliği açısından zorunludur.</p>
+
+                <h4>4.1.3. Küresel Lisanslama ve Denetim Sistemi</h4>
+                <p>Mevcut durumda lisanslar ulusal düzeyde verilmektedir. Önerilen modelde ise süreç iki aşamalı hale getirilmelidir. İlk olarak, yörüngeye herhangi bir nesne gönderilmeden önce ISA'dan <strong>"Yörünge Uygunluk Belgesi"</strong> alınmalıdır. Bu belge; manevra kabiliyeti, yakıt türü ve görev sonu imha planı gibi unsurları içermelidir. İkinci olarak, ISA müfettişleri fırlatma tesislerinde fiziksel denetimler gerçekleştirmeli ve uydu sistemlerinin beyan edilen teknik standartlara uygunluğunu kontrol etmelidir. Ayrıca otorite, yörüngedeki araçları gerçek zamanlı izleyerek izinsiz manevralar veya kural ihlalleri durumunda müdahale ve yaptırım uygulama yetkisine sahip olmalıdır.</p>
+
+                <h4>4.1.4. Ortak Standartların Belirlenmesi</h4>
+                <p>Hukuki parçalanmayı önlemek için tüm aktörlerin uyması gereken bir <strong>Evrensel Uzay Kodu</strong> oluşturulmalıdır. Bu çerçevede, uydular arasında çarpışma verisi paylaşımını sağlayacak ortak yazılım protokolleri ve standart kenetlenme arayüzleri zorunlu hale getirilmelidir. Ayrıca sürdürülebilirlik kriterleri kapsamında, görev ömrü dolan bir uydunun 25 yıl yerine en geç 5 yıl içinde yörüngeden çıkarılması şartı getirilmelidir. Uzay madenciliği bakımından ise çevresel zarar kapsamına giren yöntemler ve çıkarılan kaynağın hangi oranının "insanlığın ortak mirası" fonuna aktarılacağı açıkça belirlenmelidir.</p>
+
+                <h4>4.1.5. Yaptırım Mekanizmaları</h4>
+                <p>Bağlayıcılık ancak etkili yaptırımlarla mümkün olabilir. Bu kapsamda, kurallara uymayan şirketlerin sigorta sistemlerine veya küresel telekomünikasyon altyapılarına erişimi engellenebilir. İhlalci aktörlerin yeni fırlatma slotu almaları geçici ya da kalıcı olarak durdurulabilir. Ayrıca ISA bünyesinde kurulacak bir <strong>Uzay Tahkim Mahkemesi</strong>, kazalarda kusur oranını belirleyerek tazminatın doğrudan tahsil edilmesini sağlayabilir. Böylece forum shopping gibi uygulamaların önüne geçilerek hem güvenlik artırılacak hem de adil rekabet ortamı oluşturulacaktır.</p>
+            </div>
+
+            <!-- Problem 2 -->
+            <div class="policy-item">
+                <span class="policy-tag">Problem 2: Uzay Çöpleri ve Sürdürülebilirlik Krizi</span>
+                <h3>4.2. Uzay Çöpleri ve Sürdürülebilirlik Krizi</h3>
+                <p>Uzay çöpleri, uzay faaliyetlerinin sürdürülebilirliğini tehdit eden en kritik sorunlardan biridir. Kessler ve Cour-Palais (1978), çarpışmaların zincirleme bir reaksiyon oluşturabileceğini ortaya koyarak bu riski teorik olarak açıklamıştır. Boley ve Byers (2021) ise artan uydu sayısının bu riski somut bir tehdit haline getirdiğini göstermektedir.</p>
+
+                <h4>4.2.1. Politika Önerisi: Uzay Çöpü Yönetimi ve Temizleme Sistemi</h4>
+                <p>Bu soruna karşı önerilen politika; görev sonu zorunlu yörünge terk etme sistemi, aktif enkaz temizleme teknolojilerinin desteklenmesi ve uluslararası izleme-raporlama altyapısının kurulması olmak üzere üç temel ayaktan oluşmaktadır.</p>
+
+                <h4>4.2.2. Zorunlu Yörünge Terk Etme Sistemi</h4>
+                <p>Mevcut "25 yıl içinde yörüngeden çıkma" standardı artık yetersizdir. Bunun yerine her uydunun, görevinin bitimini takip eden en geç 5 yıl içinde atmosfere girerek yanması veya güvenli bir mezarlık yörüngesine taşınması zorunlu olmalıdır. Her uyduya, ana sistemden bağımsız çalışan bir <strong>yörünge düşürme kiti</strong> takılmalı; ana bilgisayar arızalansa bile yer istasyonundan gönderilecek basit komutlarla kendini imha rotasına alabilecek pasif sistemler lisans şartı yapılmalıdır.</p>
+
+                <h4>4.2.3. Aktif Enkaz Temizleme Teknolojilerinin Desteklenmesi</h4>
+                <p>Sadece yeni enkaz oluşumunu önlemek yeterli değildir; halihazırda yörüngede bulunan büyük ve tehlikeli parçaların temizlenmesi de gereklidir. Bunun için her fırlatmadan alınacak bir çevre harcıyla oluşturulacak <strong>Uzay Temizleme Fonu</strong>, ADR teknolojileri geliştiren şirketlere aktarılmalıdır. Robotik kollar, ağ ve zıpkın sistemleri, lazer ablasyonu gibi çeşitli teknolojiler birlikte desteklenmelidir. Ayrıca bir ülkenin başka bir ülkeye ait enkazı temizlemesi nedeniyle doğabilecek egemenlik sorunlarını aşmak için "enkazın terk edilmiş sayılması"na ilişkin uluslararası bir protokol kabul edilmelidir.</p>
+
+                <h4>4.2.4. Uluslararası İzleme ve Raporlama Sistemi</h4>
+                <p>Çarpışma risklerini azaltmanın ilk koşulu şeffaflıktır. Bu nedenle askeri ağlara bağımlı olmayan sivil ve akademik nitelikli bir <strong>Küresel Uzay Durumsal Farkındalık Ağı</strong> kurulmalıdır. Tüm operatörler, uydularının hassas konum verilerini anlık olarak sisteme yüklemekle yükümlü olmalıdır. Yaklaşma durumunda sistem otomatik olarak tarafları uyararak hakkaniyetli manevra protokolünü başlatmalıdır. Böylece yalnızca reaktif değil, önleyici bir güvenlik mekanizması da kurulmuş olacaktır.</p>
+
+                <h4>4.2.5. Politikanın Gerekçesi</h4>
+                <p>Bu sistemlerin kurulmadığı bir senaryoda Kessler Sendromu'nun gerçekleşmesi, yalnızca uzay araştırmalarını değil, GPS, küresel finans ağları ve hava durumu tahmin sistemlerini de tehdit edecektir. Bu nedenle önerilen politika, yalnızca çevresel değil aynı zamanda ekonomik ve güvenlik temelli bir zorunluluk olarak değerlendirilmelidir.</p>
+            </div>
+
+            <!-- Problem 3 -->
+            <div class="policy-item">
+                <span class="policy-tag">Problem 3: Uzay Trafiği ve Yörünge Yoğunluğu</span>
+                <h3>4.3. Uzay Trafiği ve Yörünge Yoğunluğu</h3>
+                <p>Artan uydu sayısı, yörüngelerde ciddi bir yoğunluk oluşturmakta ve çarpışma risklerini artırmaktadır. Muelhaupt ve arkadaşları (2019), mevcut trafik yönetim sistemlerinin bu yoğunluğu yönetmekte yetersiz kaldığını belirtmektedir.</p>
+
+                <h4>4.3.1. Politika Önerisi: Uzay Trafik Yönetim Sistemi (STM)</h4>
+                <p>Bu kapsamda küresel bir uzay trafik kontrol sistemi kurulmalı, uydu yerleştirme ve yörünge kullanımı düzenlenmeli ve gerçek zamanlı çarpışma önleme sistemleri zorunlu hale getirilmelidir.</p>
+
+                <h4>4.3.2. Küresel Uzay Trafik Kontrol Sistemi</h4>
+                <p>Havacılık sektöründeki ICAO modeline benzer şekilde dijital bir <strong>Küresel Uzay Trafik Kontrol Sistemi</strong> kurulmalıdır. Tüm ülkelerin ve özel şirketlerin anlık konum verilerini paylaştığı ortak bir veri tabanı oluşturulmalı, ortak zaman ve koordinat standartları zorunlu hale getirilmeli ve LEO katmanları irtifa ile eğime göre yörünge koridorlarına ayrılmalıdır.</p>
+
+                <h4>4.3.3. Uydu Yerleştirme ve Yörünge Kullanımı Düzenlemesi</h4>
+                <p>"İlk gelen kapar" yaklaşımı yerine <strong>Yörünge Kapasite Yönetimi</strong> benimsenmelidir. Belirli irtifalar belirli süreler için lisanslanmalı, kapasitesi dolan yörünge katmanlarına yeni uydu yerleştirilmesi sınırlandırılmalıdır. Uydular arasında standart minimum güvenli mesafeler tanımlanmalı ve fırlatma pencereleri merkezi sistem tarafından koordine edilmelidir.</p>
+
+                <h4>4.3.4. Gerçek Zamanlı Çarpışma Önleme Sistemleri</h4>
+                <p>Yeni düzende her uydunun, çarpışma rotasına girdiğinde yer komutu beklemeden otonom kaçınma manevrası yapabilen yapay zekâ destekli sistemlere sahip olması gerekmektedir. Bunun yanında uydular arası doğrudan iletişim altyapısı kurulmalı ve enerjisi biten uydular için pasif işaretleyiciler zorunlu hale getirilmelidir. Böylece uzay trafiği tahminlere değil, ölçülebilir ve yönetilebilir güvenlik standartlarına dayalı bir sistem haline gelecektir.</p>
+            </div>
+
+            <!-- Problem 4 -->
+            <div class="policy-item">
+                <span class="policy-tag">Problem 4: Uzay Kaynakları Üzerinde Hukuki Belirsizlik</span>
+                <h3>4.4. Uzay Kaynakları Üzerinde Hukuki Belirsizlik</h3>
+                <p>Uzay kaynaklarının kullanımına ilişkin açık düzenlemelerin bulunmaması, gelecekte ciddi çatışmalara yol açabilir. De Zwart ve arkadaşları (2023), bu alandaki hukuki boşluğun özellikle devletler ve özel şirketler arasında rekabeti artıracağını belirtmektedir.</p>
+
+                <h4>4.4.1. Politika Önerisi: Uluslararası Lisanslama ve Hibrit Paylaşım Modeli</h4>
+                <p>Bu kapsamda uzay kaynaklarının kullanımı lisansa bağlanmalı, sürdürülebilirlik kriterleri uygulanmalı ve ticari kazançların bir kısmı <strong>Uluslararası Uzay Temettü Fonu</strong> aracılığıyla küresel faydaya dönüştürülmelidir.</p>
+
+                <h4>4.4.2. Uzay Kaynaklarının Lisanslanması</h4>
+                <p>Uluslararası Uzay Otoritesi, belirli gök cisimleri veya koordinatlar için sınırlı süreli <strong>münhasır işletme hakları</strong> vermelidir. Bu haklar mülkiyet değil, yalnızca kullanım hakkı anlamına gelmelidir. Aynı bölgede çevresel tahribatı önlemek için slot sistemi uygulanmalı; lisanslar yalnızca ekonomik güce göre değil, çevresel etkiyi azaltma ve teknoloji paylaşımı taahhüdüne göre verilmelidir.</p>
+
+                <h4>4.4.3. Sürdürülebilirlik Kriterleri</h4>
+                <p>Uzay kaynaklarının kullanımı bilimsel ve çevresel sınırlarla uyumlu olmalıdır. Bilimsel değeri yüksek alanların tahrip edilmesi yasaklanmalı, çıkarılan kaynakların bir kısmının uzaydaki ortak altyapıya aktarılması şart koşulmalı ve madencilik sırasında oluşan toz ve mikro parçacıkların yörünge güvenliğini bozmaması için filtreleme sistemleri zorunlu hale getirilmelidir.</p>
+
+                <h4>4.4.4. Uluslararası Uzay Temettü Fonu</h4>
+                <p>Bu fon, uzay kaynaklarından doğan gelirin yalnızca uzay gücü yüksek devletler ve şirketler arasında toplanmasını önlemeyi amaçlamaktadır. Şirketler, çıkardıkları kaynağın piyasa değeri veya net kazançları üzerinden belirli bir oranda katkı payı ödemelidir. Elde edilen fonlar, gelişmekte olan ülkelerin uzay teknolojilerine erişimi, küresel tehditlerin izlenmesi ve gelecek nesiller için burs ve araştırma destekleri amacıyla kullanılmalıdır.</p>
+
+                <h4>4.4.5. Politikanın Sonucu</h4>
+                <p>Bu model, literatürde tartışılan "insanlığın ortak mirası" ilkesi ile özel yatırımın güvenliği arasındaki gerilimi dengelemektedir. Böylece hem yatırımcılar için hukuki öngörülebilirlik sağlanmakta hem de kaynak paylaşımında küresel adalet hedeflenmektedir.</p>
+            </div>
+
+            <!-- Problem 5 -->
+            <div class="policy-item">
+                <span class="policy-tag">Problem 5: Çevresel Boyutun Hukukta Yetersizliği</span>
+                <h3>4.5. Çevresel Boyutun Hukukta Yetersizliği</h3>
+                <p>Uzay, giderek daha fazla çevresel bir sistem olarak değerlendirilmektedir. Lawrence ve arkadaşları (2022), uzayın korunması gereken bir ekosistem olarak ele alınması gerektiğini vurgulamaktadır.</p>
+
+                <h4>4.5.1. Politika Önerisi: Uzay Çevre Hukuku</h4>
+                <p>Uzay faaliyetleri için çevresel etki değerlendirmesi zorunlu hale getirilmeli, mega uydu projeleri sınırlandırılmalı ve uzay çevresi hukuki olarak koruma altına alınmalıdır.</p>
+
+                <h4>4.5.2. Çevresel Etki Değerlendirmesi Zorunluluğu</h4>
+                <p>ÇED süreçleri yalnızca fırlatma rampası çevresiyle sınırlı kalmamalıdır. Roket yakıtlarının atmosfer üzerindeki etkileri, uyduların görev sonu imhası ve yaşam döngüsü boyunca ortaya çıkardığı çevresel sonuçlar bütüncül biçimde değerlendirilmelidir. Bu yaklaşım, "beşikten mezara" lisanslama anlayışını uzay hukukuna entegre edecektir.</p>
+
+                <h4>4.5.3. Mega Uydu Takımlarının Sınırlandırılması</h4>
+                <p>Binlerce uydudan oluşan takımlar hem çarpışma riskini artırmakta hem de astronomik gözlemleri zorlaştırmaktadır. Bu nedenle yörünge kapasite kotaları belirlenmeli ve uyduların yansıtıcılık düzeyleri için yasal sınırlar getirilmelidir. Böylece hem fiziksel sürdürülebilirlik hem de bilimsel gözlem hakkı korunmuş olacaktır.</p>
+
+                <h4>4.5.4. Uzay Çevresinin Hukuki Statüsü</h4>
+                <p>Uzay çevresi bakımından <strong>"kirleten öder"</strong> ilkesi açık biçimde uluslararası hukuka dahil edilmeli ve uzaya verilen kalıcı zararların uluslararası mahkemelerde <strong>eko-kırım</strong> kapsamında değerlendirilmesini sağlayacak yeni bir protokol hazırlanmalıdır. Bu doğrultuda UNOOSA nezdinde bağlayıcı bir <strong>Uzay Çevre Protokolü</strong> imzalanması somut ve gerekli bir adımdır.</p>
+            </div>
+
+            <!-- Problem 6 -->
+            <div class="policy-item">
+                <span class="policy-tag">Problem 6: Ekonomik Dışsallıklar ve Sorumluluk Eksikliği</span>
+                <h3>4.6. Ekonomik Dışsallıklar ve Sorumluluk Eksikliği</h3>
+                <p>Uzay çöpleri ve yörünge yoğunluğu, literatürde negatif dışsallık olarak tanımlanmaktadır. Bu maliyetler mevcut sistem tarafından yeterince içselleştirilmemektedir.</p>
+
+                <h4>4.6.1. Politika Önerisi: "Kirleten Öder" Prensibi</h4>
+                <p>Uzay faaliyetlerinden doğan çevresel zararların ekonomik olarak fiyatlandırılması, şirketlere uzay çöpü vergisi uygulanması ve sürdürülebilir teknolojilerin teşvik edilmesi gerekmektedir.</p>
+
+                <h4>4.6.2. Uzay Çöpü Vergisi ve Yörünge Kullanım Ücreti</h4>
+                <p>Yörüngeye yerleştirilen her kilogram yük veya uydunun kapladığı hacim için vergi alınabilir. Riskli yörüngelerde faaliyet gösteren aktörler için daha yüksek vergi oranları uygulanabilir. Ayrıca şirketlerden fırlatma öncesi bir teminat bedeli alınmalı; görev sonunda uydu güvenli şekilde yörüngeden çıkarılırsa bu bedel iade edilmelidir. Böylece ekonomik teşvikler sürdürülebilir davranışı destekleyecektir.</p>
+
+                <h4>4.6.3. Çevresel Zararların Ekonomik Fiyatlandırılması</h4>
+                <p>Yörünge slotlarının açık artırma ile tahsis edilmesi ve toplam güvenli çöp kapasitesine dayalı ticarete konu kirlilik kotalarının oluşturulması, uzaydaki ortak alan kullanımını daha rasyonel hale getirebilir. Bu yöntemle yörünge, sınırsız ve ücretsiz bir alan olmaktan çıkarılarak ekonomik değer taşıyan düzenlenmiş bir kaynağa dönüştürülür.</p>
+
+                <h4>4.6.4. Sürdürülebilir Teknolojilerin Teşviki</h4>
+                <p>Yalnızca cezalandırıcı araçlar değil, ödüllendirici mekanizmalar da kurulmalıdır. Toksik olmayan yakıt kullanan, aktif çöp temizleme sistemleri içeren veya yüksek sürdürülebilirlik performansı gösteren uydular için vergi indirimleri uygulanabilir. Ayrıca şirketlerin çevreci davranışlarını puanlayan bir <strong>Uzay Sürdürülebilirlik Reytingi</strong> sistemi kurulabilir. Bu puanlar, sigorta primlerinden kamu teşviklerine kadar pek çok alanda belirleyici olabilir.</p>
+            </div>
+
+            <!-- Genel Değerlendirme -->
+            <div class="policy-item">
+                <span class="policy-tag">Genel Değerlendirme</span>
+                <h3>4.7. Genel Değerlendirme</h3>
+                <p>Yukarıda geliştirilen politika önerileri, uzay hukukunun güncel sorun alanlarını yalnızca teorik düzeyde tanımlamakla kalmamakta, aynı zamanda uygulanabilir yönetişim mekanizmaları da önermektedir. Hukuki parçalanma, uzay çöpleri, trafik yoğunluğu, kaynak paylaşımı, çevresel sürdürülebilirlik ve ekonomik dışsallıklar gibi birbirine bağlı sorunlar, ancak bütüncül ve uluslararası iş birliğine dayalı bir sistemle çözülebilir. Bu nedenle önerilen model, uzayın güvenli, adil ve sürdürülebilir kullanımını sağlama hedefi doğrultusunda kapsamlı bir politika çerçevesi sunmaktadır.</p>
+            </div>
+        </section>
+
+        <!-- SONUÇ -->
+        <section id="sonuc">
+            <h2>5. SONUÇ</h2>
+            <p>Bu çalışma, uzay hukukunun mevcut yapısının yeni uzay çağının dinamikleri karşısında önemli ölçüde yetersiz kaldığını ortaya koymuştur. Outer Space Treaty ile şekillenen klasik hukuk anlayışı, uzayın barışçıl kullanımını ve tüm insanlığın ortak mirası olma ilkesini güvence altına almış olsa da, günümüzde ortaya çıkan çok aktörlü, yoğun ve ticari uzay faaliyetlerini düzenlemek için yeterli değildir.</p>
+            <p>Literatür taraması sonucunda uzay hukukunun üç temel yapısal sorunla karşı karşıya olduğu belirlenmiştir: (i) özel sektörün artan rolü karşısında hukuki yetersizlik, (ii) küresel ölçekte bağlayıcı bir yönetişim mekanizmasının eksikliği ve (iii) uzay ortamının sürdürülebilirliğini tehdit eden çevresel risklerin artışı. Bu sorunlar, uzayın artık sınırsız bir alan değil, korunması gereken sınırlı bir <strong>"küresel ortak kaynak"</strong> haline geldiğini göstermektedir.</p>
+            <p>Bu çalışmada geliştirilen politika önerileri, söz konusu sorunlara bütüncül bir çözüm çerçevesi sunmaktadır. <strong>Uluslararası Uzay Otoritesi</strong>, uzay trafik yönetim sistemi ve lisanslama mekanizmaları yönetişim eksikliğini gidermeyi hedeflerken; uzay çöpü yönetimi, çevresel düzenlemeler ve "kirleten öder" prensibi sürdürülebilirliği sağlamaya yöneliktir. Bununla birlikte, uzay kaynaklarının kullanımına ilişkin önerilen hibrit model ve <strong>Uluslararası Uzay Temettü Fonu</strong>, ekonomik verimlilik ile küresel adalet arasında denge kurmayı amaçlamaktadır.</p>
+            <p>Çalışmanın önemli katkılarından biri, teorik bulguların uygulamaya dönüştürülmesidir. Bu kapsamda geliştirilen web tabanlı dijital platform, uzay hukukuna ilişkin bilgilerin daha erişilebilir hale getirilmesini sağlamış ve çalışmanın eğitim boyutunu güçlendirmiştir. Bu yönüyle araştırma, yalnızca akademik bir analiz sunmakla kalmayıp, aynı zamanda uygulanabilir ve yaygınlaştırılabilir bir model ortaya koymaktadır.</p>
+            <p>Sonuç olarak, uzay artık yalnızca keşfedilecek bir alan değil; düzenlenmesi, korunması ve sürdürülebilir şekilde yönetilmesi gereken <strong>küresel bir ortak varlıktır</strong>. Bu nedenle uzay hukukunun günümüz koşullarına uyarlanması, daha kapsayıcı, bağlayıcı ve sürdürülebilir bir yönetişim modelinin geliştirilmesi kaçınılmazdır. Aksi takdirde uzay, insanlık için bir fırsat alanı olmaktan çıkarak yeni çatışma ve kriz alanlarına dönüşme riski taşımaktadır.</p>
+        </section>
+
+        <!-- KAYNAKÇA -->
+        <section id="kaynakca">
+            <h2>KAYNAKÇA (APA 7)</h2>
+
+            <p>Bartóki-Gönczy, B., & Sulyok, G. (Eds.). (2024). <em>The New Space Age: Legal and Policy Perspectives</em>. Ludovika University Press.
+            <a class="kaynak-link" href="https://doi.org/10.36250/01208_00" target="_blank">https://doi.org/10.36250/01208_00</a></p>
+
+            <p>Boley, A. C., & Byers, M. (2021). Satellite mega-constellations create risks in Low Earth Orbit, the atmosphere and on Earth. <em>Scientific Reports, 11</em>, 10642.
+            <a class="kaynak-link" href="https://doi.org/10.1038/s41598-021-89909-7" target="_blank">https://doi.org/10.1038/s41598-021-89909-7</a></p>
+
+            <p>Deplano, R. (2021). The Artemis Accords: Evolution or revolution in international space law? <em>International & Comparative Law Quarterly, 70</em>(3), 799–819.
+            <a class="kaynak-link" href="https://doi.org/10.1017/S0020589321000212" target="_blank">https://doi.org/10.1017/S0020589321000212</a></p>
+
+            <p>Jakhu, R. S., & Freeland, S. (2016/2017). <em>The Relationship Between the Outer Space Treaty and Customary International Law</em>. SSRN Electronic Journal / Proceedings of the International Institute of Space Law 2016.
+            <a class="kaynak-link" href="https://doi.org/10.2139/ssrn.3397145" target="_blank">https://doi.org/10.2139/ssrn.3397145</a></p>
+
+            <p>Kessler, D. J., & Cour-Palais, B. G. (1978). Collision frequency of artificial satellites: The creation of a debris belt. <em>Journal of Geophysical Research, 83</em>(A6), 2637–2646.
+            <a class="kaynak-link" href="https://doi.org/10.1029/JA083iA06p02637" target="_blank">https://doi.org/10.1029/JA083iA06p02637</a></p>
+
+            <p>Lawrence, A., Rawls, M. L., Jah, M., Boley, A., Di Vruno, F., Garrington, S., Kramer, M., Lawler, S., Lowenthal, J., McDowell, J., & McCaughrean, M. (2022). The case for space environmentalism. <em>Nature Astronomy, 6</em>, 428–435.
+            <a class="kaynak-link" href="https://doi.org/10.1038/s41550-022-01655-6" target="_blank">https://doi.org/10.1038/s41550-022-01655-6</a></p>
+
+            <p>Muelhaupt, T. J., Sorge, M. E., Morin, J., & Wilson, R. S. (2019). Space traffic management in the new space era. <em>Journal of Space Safety Engineering, 6</em>(2), 80–87.
+            <a class="kaynak-link" href="https://doi.org/10.1016/j.jsse.2019.05.007" target="_blank">https://doi.org/10.1016/j.jsse.2019.05.007</a></p>
+
+            <p>Steele, S. M. (2022). International space law: A hindrance to space activities or a resolute action for change. <em>American Journal of Aerospace Engineering, 9</em>(1), 1–13.
+            <a class="kaynak-link" href="https://doi.org/10.11648/j.ajae.20220901.11" target="_blank">https://doi.org/10.11648/j.ajae.20220901.11</a></p>
+
+            <p>von der Dunk, F. G. (2011). Space tourism, private spaceflight and the law: Key aspects. <em>Space Policy, 27</em>(3), 146–152.
+            <a class="kaynak-link" href="https://doi.org/10.1016/j.spacepol.2011.04.015" target="_blank">https://doi.org/10.1016/j.spacepol.2011.04.015</a></p>
+
+            <p>Yang, K., & Amongin, S. (2024). Assessing the Principle of Equitable Access versus Non-Appropriation in the Era of Mega-Constellations. <em>Aerospace, 11</em>(10), 842.
+            <a class="kaynak-link" href="https://doi.org/10.3390/aerospace11100842" target="_blank">https://doi.org/10.3390/aerospace11100842</a></p>
+
+        </section>
+    </div>
+
+    <div class="footer">
+        <p>UZAY HUKUKU VE YÖNETİŞİM PORTALI - 2026</p>
+    </div>
+
+</body>
+</html>
